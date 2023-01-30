@@ -12,6 +12,7 @@ message GetTransactionsByAccountRequest {
 // The response will return an array of transactions based on the requested account
 message GetTransactionsByAccountResponse {
     repeated transaction.v1.Transaction transactions = 1;
+    string test_field = 2;
 }
 
 service TransactionService {
