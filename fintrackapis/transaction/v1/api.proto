@@ -6,7 +6,7 @@ import "transaction/v1/transaction.proto";
 
 // Get all transactions based on an account ID
 message GetTransactionsByAccountRequest {
-    string account_id = 1;
+    string account = 1;
 }
 
 // The response will return an array of transactions based on the requested account
