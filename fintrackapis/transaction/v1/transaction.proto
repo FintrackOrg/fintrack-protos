@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package transaction.v1;
+
+import "google/type/datetime.proto";
+
+message Transaction {
+    string id = 1;
+    string source = 2;
+    uint32 value = 3;
+    string date = 4;
+    PaymentMethod payment_method = 5;
+    string account_id = 6;
+    string user_id = 7;
+    repeated TransactionDetail details = 8;
+    google.type.DateTime created_at = 9;
+    google.type.DateTime updated_at = 10;
+}
+
+message TransactionDetail {
+    string id = 1;
+    uint32 quantity = 2;
+    string name = 3;
+    int32 value = 4;
+    Category category = 5;
+    uint32 total = 6;
+    uint32 unit_value = 7;
+    string brand = 8;
+}
+
+enum PaymentMethod {
+    PAYMENT_METHOD_UNSPECIFIED = 0;
+    PAYMENT_METHOD_CREDIT = 1;
+    PAYMENT_METHOD_DEBIT = 2;
+    PAYMENT_METHOD_CASH = 3;
+}
+
+enum Category {
+    CATEGORY_UNSPECIFIED = 0;
+    CATEGORY_GROCERIES = 1;
+    CATEGORY_FOOD = 2;
+    CATEGORY_CLOTHS = 3;
+    CATEGORY_PETS = 4;
+    CATEGORY_HOUSE = 5;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package transaction.v1;
+
+import "transaction/v1/transaction.proto";
+
+// Get all transactions based on an account ID
+message GetTransactionsByAccountRequest {
+    string account_id = 1;
+}
+
+// The response will return an array of transactions based on the requested account
+message GetTransactionsByAccountResponse {
+    repeated transaction.v1.Transaction transactions = 1;
+}
+
+service TransactionService {
+    rpc GetTransactionsByAccount (GetTransactionsByAccountRequest) returns (GetTransactionsByAccountResponse) {}
+}

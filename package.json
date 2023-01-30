@@ -1,0 +1,20 @@
+{
+  "name": "fintrack-protos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grpc_tools_node_protoc_ts": "^5.3.2"
+  },
+  "dependencies": {
+    "@buf/darvand_fintrackapis.grpc_node": "^1.12.3-20230129025409-5338016c7e87.1",
+    "@buf/darvand_fintrackapis.protocolbuffers_js": "^3.21.2-20230129025409-5338016c7e87.3",
+    "grpc-tools": "^1.9.1"
+  }
+}
