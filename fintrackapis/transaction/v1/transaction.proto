@@ -17,6 +17,25 @@ message Transaction {
     google.type.DateTime updated_at = 10;
 }
 
+message CreateTransaction {
+    string source = 1;
+    uint32 value = 2;
+    string date = 3;
+    PaymentMethod payment_method = 4;
+    string account_id = 5;
+    string user_id = 6;
+    repeated CreateTransactionDetail details = 7;
+}
+
+message CreateTransactionDetail {
+    uint32 quantity = 1;
+    string name = 2;
+    int32 value = 3;
+    Category category = 4;
+    uint32 unit_value = 5;
+    string brand = 6;
+}
+
 message TransactionDetail {
     string id = 1;
     uint32 quantity = 2;
