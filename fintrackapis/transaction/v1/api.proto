@@ -6,15 +6,23 @@ import "transaction/v1/transaction.proto";
 
 // Get all transactions based on an account ID
 message GetTransactionsByAccountRequest {
-    string account = 1;
+    string account_id = 1;
 }
 
 // The response will return an array of transactions based on the requested account
 message GetTransactionsByAccountResponse {
     repeated transaction.v1.Transaction transactions = 1;
-    string test_field = 2;
+}
+
+message CreateAccountTransactionRequest {
+    transaction.v1.CreateTransaction transaction = 1;
+}
+
+message CreateAccountTransactionResponse {
+    transaction.v1.Transaction transaction = 1;
 }
 
 service TransactionService {
     rpc GetTransactionsByAccount (GetTransactionsByAccountRequest) returns (GetTransactionsByAccountResponse) {}
+    rpc CreateAccountTransaction (CreateAccountTransactionRequest) returns (CreateAccountTransactionResponse) {}
 }
