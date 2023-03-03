@@ -34,6 +34,7 @@ message CreateTransactionDetail {
     Category category = 4;
     uint32 unit_value = 5;
     string brand = 6;
+    string product_id = 9;
 }
 
 message TransactionDetail {
@@ -45,6 +46,7 @@ message TransactionDetail {
     uint32 total = 6;
     uint32 unit_value = 7;
     string brand = 8;
+    string product_id = 9;
 }
 
 enum PaymentMethod {
